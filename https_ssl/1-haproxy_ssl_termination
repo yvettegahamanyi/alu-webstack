@@ -29,13 +29,13 @@ defaults
     errorfile 503 /etc/haproxy/errors/503.http
     errorfile 504 /etc/haproxy/errors/504.http
 
-frontend http_front
-    bind *:443 ssl crt /etc/letsencrypt/live/www.yvettegahamanyi.tech 
+frontend yvette_front
+    bind *:443 ssl crt /etc/letsencrypt/live/www.yvettegahamanyi.tech/fullchain.pem
     http-request add-header X-Forwarded-Proto http
     http-request redirect scheme https if !{ ssl_fc }
-    use_backend http_back
+    use_backend yvette_back
 
-backend http_back
+backend yvette_back
     redirect scheme https if !{ ssl_fc }
     server 6122-web-01 34.227.86.0:80
     server 6122-web-02 54.89.169.250:80
