@@ -37,5 +37,5 @@ frontend http_front
 
 backend http_back
     redirect scheme https if !{ ssl_fc }
-    server 6022-web-01 34.236.156.254:80
-    server 6022-web-02 34.230.90.142:80
+    server 6122-web-01 34.227.86.0:80
+    server 6122-web-02 54.89.169.250:80
