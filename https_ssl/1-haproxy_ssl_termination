@@ -38,7 +38,7 @@ frontend yvette-frontend
 	http-request set-header X-Forwarded-Proto http
         default_backend  yvette-backend
 
-frontend yvette-frontend
+frontend yvette-frontend-https
 	bind *:443 ssl crt /etc/haproxy/certs/www.yvettegahamanyi.tech.pem
 	http-request set-header X-Forwarded-Proto https
 	default_backend  yvette-backend
